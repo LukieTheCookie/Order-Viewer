@@ -21,6 +21,7 @@ The Order Viewer app allows users to:
 - **Frontend:** Angular, Angular Material 
 - **Build Tools:** Maven, Node.js/NPM  
 - **Testing:** JUnit (backend) and Mockito
+- **Postman:** API Testing
 
 ---
 
@@ -35,7 +36,7 @@ The Order Viewer app allows users to:
 
 ---
 
-###Design Decisions
+### Design Decisions
 
 - Filtering in Backend: Uses JPA Specifications for efficient DB queries rather than client-side filtering.
 
@@ -56,7 +57,10 @@ The Order Viewer app allows users to:
 - Java 17+  
 - Maven 3.6+  
 - Node.js 14+ and npm  
-- MySQL 
+- MySQL
+- Postman : "./OrderViewer..."
+
+
 
 ### Backend
 
