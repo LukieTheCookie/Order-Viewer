@@ -1,0 +1,44 @@
+<div class="order-detail-container" *ngIf="order">
+  <div class="order-detail-header">
+    Order #{{ order.id }} Details
+  </div>
+
+  <div class="order-detail-section">
+    <h4>Customer Info</h4>
+    <p><strong>Name:</strong> {{ order.customerName }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Paid:</strong> {{ order.paid ? 'Yes' : 'No' }}</p>
+    <p><strong>Created:</strong> {{ order.createdDate | date: 'medium' }}</p>
+  </div>
+
+  <div class="order-detail-section">
+    <h4>Order Summary</h4>
+    <p><strong>Total Amount:</strong> R{{ order.total | number: '1.2-2' }}</p>
+  </div>
+
+  <div class="order-detail-section">
+    <h4>Items</h4>
+    <table class="order-items-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price (each)</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order.orderItemList">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>R{{ item.price | number: '1.2-2' }}</td>
+          <td>R{{ (item.price * item.quantity) | number: '1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="!order" class="order-detail-container">
+  <p>No order selected.</p>
+</div>
