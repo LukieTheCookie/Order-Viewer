@@ -1,0 +1,10 @@
+<div class="statistics-widget" *ngIf="stats">
+  <div class="stat-item">
+    <div class="stat-label">Total Orders</div>
+    <div class="stat-value">{{ stats.count }}</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-label">Total Cost</div>
+    <div class="stat-value">R{{ stats.grandTotal | number:'1.2-2'}}</div>
+  </div>
+</div>

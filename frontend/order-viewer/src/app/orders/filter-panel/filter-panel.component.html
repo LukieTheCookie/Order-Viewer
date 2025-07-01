@@ -1,0 +1,30 @@
+<div class="filter-panel">
+  <form [formGroup]="filterForm" class="filter-form">
+    <div class="form-row">
+      <label>Status:</label>
+      <select formControlName="status">
+        <option value="">All</option>
+        <option *ngFor="let s of statuses" [value]="s.value">{{ s.label }}</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Created From:</label>
+      <input type="date" formControlName="createdFrom" />
+    </div>
+
+    <div class="form-row">
+      <label>Created To:</label>
+      <input type="date" formControlName="createdTo" />
+    </div>
+
+    <div class="form-row">
+      <label>Total Max:</label>
+      <input type="number" formControlName="totalMax" />
+    </div>
+
+    <div class="form-actions">
+      <button type="button" (click)="resetFilters()">Reset</button>
+    </div>
+  </form>
+</div>
