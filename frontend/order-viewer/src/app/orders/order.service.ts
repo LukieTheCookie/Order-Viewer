@@ -47,7 +47,7 @@ export class OrderService {
   }
 
   markAsPaid(id: number): Observable<void> {
-    return this.http.patch<void>(`${this.baseUrl}/${id}/paid`, {});
+    return this.http.patch<void>(`${this.baseUrl}/${id}/pay`, {});
   }
 
   getStatistics(filters: any = {}): Observable<OrderStatistics> {

@@ -7,20 +7,22 @@ import { OrderDetailComponent } from './orders/order-detail/order-detail.compone
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPanelComponent } from './orders/filter-panel/filter-panel.component';
+import { StatisticsWidgetComponent } from './orders/statistics-widget/statistics-widget.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderListComponent,
     OrderDetailComponent,
-    FilterPanelComponent
+    FilterPanelComponent,
+    StatisticsWidgetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

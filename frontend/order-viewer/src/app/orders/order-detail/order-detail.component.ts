@@ -27,4 +27,19 @@ export class OrderDetailComponent implements OnInit {
       }
     });
   }
+
+  markAsPaid(): void {
+  if (!this.order || this.order.paid) return;
+
+  this.orderService.markAsPaid(this.order.id).subscribe({
+    next: () => {
+      if (this.order) {
+        this.order.paid = true;
+      }
+    },
+    error: err => {
+      console.error('Error marking as paid:', err);
+    }
+  });
+}
 }

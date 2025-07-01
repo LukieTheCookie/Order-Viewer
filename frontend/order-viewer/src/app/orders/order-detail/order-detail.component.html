@@ -14,6 +14,17 @@
   <div class="order-detail-section">
     <h4>Order Summary</h4>
     <p><strong>Total Amount:</strong> R{{ order.total | number: '1.2-2' }}</p>
+
+    <div class="action-bar">
+      <button
+        *ngIf="!order.paid"
+        class="mark-paid-btn"
+        (click)="markAsPaid()"
+      >
+        Mark as Paid
+      </button>
+      <span *ngIf="order.paid" class="paid-label">Already Paid</span>
+    </div>
   </div>
 
   <div class="order-detail-section">

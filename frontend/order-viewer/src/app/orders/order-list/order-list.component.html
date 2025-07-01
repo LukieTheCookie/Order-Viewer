@@ -1,3 +1,5 @@
+<app-filter-panel (filtersChanged)="onFiltersChanged($event)"></app-filter-panel>
+
 <div class="order-list-container">
   <table class="order-list-table" *ngIf="orders && orders.length; else noOrders">
     <thead>
@@ -25,3 +27,5 @@
     <p>No orders to display.</p>
   </ng-template>
 </div>
+
+<app-statistics-widget [filters]="filters"></app-statistics-widget>
