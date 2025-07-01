@@ -1,0 +1,27 @@
+<div class="order-list-container">
+  <table class="order-list-table" *ngIf="orders && orders.length; else noOrders">
+    <thead>
+      <tr>
+        <!-- No Order ID -->
+        <th>Customer Name</th>
+        <th>Status</th>
+        <th>Paid</th>
+        <th>Created Date</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders" (click)="selectOrder(order)" [class.selected]="order.id === order?.id">
+        <td>{{ order.customerName }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.paid ? 'Yes' : 'No' }}</td>
+        <td>{{ order.createdDate | date: 'mediumDate' }}</td>
+        <td>R{{ order.total | number:'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noOrders>
+    <p>No orders to display.</p>
+  </ng-template>
+</div>
