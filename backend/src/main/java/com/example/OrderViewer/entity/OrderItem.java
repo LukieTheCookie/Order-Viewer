@@ -1,9 +1,13 @@
 package com.example.OrderViewer.entity;
 
-
 import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class OrderItem {
 
     @Id

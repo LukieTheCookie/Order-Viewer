@@ -1,15 +1,17 @@
 package com.example.OrderViewer.entity;
 
 import jakarta.persistence.*;
-import org.aspectj.weaver.ast.Or;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.*;
 
 @Entity
 @Table(name = "orders")
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
     @Id
     @GeneratedValue
@@ -27,6 +29,6 @@ public class Order {
     private LocalDateTime createdDate;
 
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> orderItemList = new ArrayList<>();
 }
