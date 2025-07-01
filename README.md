@@ -81,3 +81,10 @@ The Order Viewer app allows users to:
 - Backend runs on http://localhost:8080
 - Frontend runs on http://localhost:4200
 - Ensure backend is running before starting frontend for full functionality
+
+
+
+### Open Items
+
+- Mobile style
+- Frontend Tests
