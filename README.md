@@ -58,7 +58,6 @@ The Order Viewer app allows users to:
 - Maven 3.6+  
 - Node.js 14+ and npm  
 - MySQL
-- Postman : "./OrderViewer..."
 
 
 
@@ -69,6 +68,7 @@ The Order Viewer app allows users to:
 - cd backend
     -  ./mvnw clean install
     - ./mvnw spring-boot:run
+- To run the Postman tests, open the 'Order Viewer API Tests.postman_collection.json' in postman
  
 ### Frontend
 
