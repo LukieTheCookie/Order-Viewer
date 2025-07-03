@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "ad90d2c4-dbcb-4b1c-8fbf-4d4993ae53a4",
+		"name": "Order Viewer API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29929247"
+	},
+	"item": [
+		{
+			"name": "Get All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders?status=SHIPPED",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "SHIPPED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Date Range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders?createdFrom=2025-07-01T20:07:28.262390&createdTo=2025-07-01T20:07:28.262403",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "createdFrom",
+							"value": "2025-07-01T20:07:28.262390"
+						},
+						{
+							"key": "createdTo",
+							"value": "2025-07-01T20:07:28.262403"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Total Range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders?totalMin=50&totalMax=200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "totalMin",
+							"value": "50"
+						},
+						{
+							"key": "totalMax",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Combined Filters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders?status=PROCESSING&totalMin=100&createdFrom=2025-06-16T20:07:28.262408",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "PROCESSING"
+						},
+						{
+							"key": "totalMin",
+							"value": "100"
+						},
+						{
+							"key": "createdFrom",
+							"value": "2025-06-16T20:07:28.262408"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Order As Paid",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/1/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"1",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistics Filtered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders/statistics?status=PENDING&totalMin=30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders",
+						"statistics"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "PENDING"
+						},
+						{
+							"key": "totalMin",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid Status Error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders?status=INVALID_STATUS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "INVALID_STATUS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No Result Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/orders?totalMin=9999999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "totalMin",
+							"value": "9999999"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080"
+		}
+	]
+}
